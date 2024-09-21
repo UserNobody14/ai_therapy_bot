@@ -1,0 +1,5 @@
+*.mp3
+*.sqlite3
+.env
+node_modules
+*.pyc
