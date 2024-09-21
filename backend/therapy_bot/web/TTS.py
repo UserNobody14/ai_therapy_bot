@@ -2,14 +2,17 @@
 import requests  # Used for making HTTP requests
 import json  # Used for working with JSON data
 import uuid
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Define constants for the script
 CHUNK_SIZE = 1024  # Size of chunks to read/write at a time
-XI_API_KEY = "sk_00e67c53a163ea22c6674d52f3b7997709c30cb97c3d69b5"  # Your API key for authentication
+XI_API_KEY = os.getenv("EL_API_KEY")  # Your API key for authentication
 VOICE_ID = "LcfcDJNUP1GQjkzn1xUU"  # ID of the voice model to use
-TEXT_TO_SPEAK = (
-    "My name is Emily, I be your therapist today."  # Text you want to convert to speech
-)
+TEXT_TO_SPEAK = "My name is Emily, I will be your therapist today."  # Text you want to convert to speech
 OUTPUT_PATH = "output.mp3"  # Path to save the output audio file
 
 # Construct the URL for the Text-to-Speech API request
