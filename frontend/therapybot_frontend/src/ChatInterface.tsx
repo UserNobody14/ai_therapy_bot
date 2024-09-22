@@ -5,14 +5,14 @@ export interface Message {
   isUser: boolean;
 }
 
-const exampleMessages: Message[] = [
-  { text: "Hello!", isUser: false },
-  { text: "Hi there!" , isUser: true },
-];
+// const exampleMessages: Message[] = [
+//   { text: "Hello!", isUser: false },
+//   { text: "Hi there!" , isUser: true },
+// ];
 
 export function ChatInterface() {
   const [input, setInput] = useState("");
-  const [messages, setMessages] = useState<Message[]>(exampleMessages);
+  const [messages, setMessages] = useState<Message[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [mp3, setMp3] = useState<string | null>(null);
@@ -66,13 +66,22 @@ export function ChatInterface() {
   return (
     <div className="chat-interface">
       {/* Play MP3 */}
-      <h1>AI Therapy Bot</h1>
-      <h2>Overview</h2>
+      <h1>Therapy.Voice</h1>
+      {/* Assigned Therapist Badge */}
+      <div className="badge">
+        <p>Your assigned therapist:</p>
+        <p className="therapist">Katherine</p>
+      </div>
+      {/* Circular Image */}
+      <div className="image">
+        <img src="/TherapyBot.jpg" alt="Therapy Bot" />
+      </div>
       {/* All Messages */}
       <div className="messages">
         <div>
-        The AI therapy bot is a web application that provides a conversational interface for users to talk about their feelings and emotions. The bot uses natural language processing to understand the user's input and respond with appropriate messages. The goal of the bot is to provide a safe space for users to express themselves and receive support and guidance.
-        </div>
+        Send a message to Emily, your helpful therapist. What's on your mind today?
+
+               </div>
         {messages.map((message, index) => (
           <div
             key={index}

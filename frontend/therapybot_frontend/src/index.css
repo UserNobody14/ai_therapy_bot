@@ -163,3 +163,25 @@ button:focus-visible {
 }
 
 
+.chat-interface .image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 8px;
+  /* Circle */
+  border-radius: 50%;
+}
+
+.chat-interface .badge {
+  color: #ffffff;
+  font-size: 0.8em;
+  font-weight: 500;
+  width: fit-content;
+  display: inline-flex;
+  gap: 0.4em;
+}
+
+.badge p.therapist {
+  padding: 0.2em 0.4em;
+  border-radius: 8px;
+  background-color: #646cff;
+}
